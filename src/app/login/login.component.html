@@ -1,0 +1,40 @@
+<!-- <nb-card>
+    <nb-card-header></nb-card-header>
+    <nb-card-body> -->
+        <div class="row justify-content-center">
+          <div style="width: 550px; margin-top: 3%;">
+
+            <div class="text-center" style="font-size: 34px;width: 100%;margin-top: 20%;margin-bottom:5%;font-weight: bolder;">Stock Management</div>
+            <p style="margin-top: 10px;" class="text-center">hello! Log in with your Gmail </p>
+            <div *ngIf="message" class="text-danger text-center mt-3">
+              {{message}}
+            </div>
+            <div class="mt-5" style="margin-top:5%;">
+                <!-- <form [formGroup]="form" (ngSubmit)="submit()">
+                    <formly-form
+                      [model]="model"
+                      [fields]="fields"
+                      [options]="options"
+                      [form]="form"
+                    ></formly-form>
+                    <button
+                      type="button"
+                      class="btn btn-default float-right"
+                      (click)="options.resetModel()"
+                    >
+                      Reset
+                    </button>
+                  </form>               -->
+                  <button type="submit" class="btn btn-primary submit-button btn-block" (click)="authorizeWithGoogle()">
+                    Login with Google
+                  </button>
+
+                </div>
+            <div style="margin-top: 3%;" class="text-center">
+              <p>Forgot Password?</p>
+            </div>
+          </div>
+        </div>
+    <!-- </nb-card-body>  
+</nb-card> -->
+

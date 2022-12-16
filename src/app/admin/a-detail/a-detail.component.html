@@ -1,0 +1,244 @@
+<div class="container">
+  <nb-card>
+    <!-- <nb-card-header> User Management </nb-card-header> -->
+    <nb-card-body>
+      <nb-card>
+        <nb-card-header> </nb-card-header>
+        <nb-card-body>
+          <div class="main-content mt-5">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="card">
+                    <div class="card-header back-color">
+                      <h4 class="card-title">{{ data.displayName }} Profile</h4>
+                      <div class="button-row float-right">
+                        <button
+                          class="btn btn-outline-primary add-user-btn"
+                          (click)="open(content)"
+                        >
+                          Edit User Information
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="table-length">
+                        <table class="table table-length">
+                          <tbody>
+                            <tr>
+                              <th>Full Name</th>
+                              <td>
+                                {{ data.displayName }}
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>Role</th>
+                              <td>{{ data.role }}</td>
+                            </tr>
+                            <tr>
+                              <th>Gender</th>
+                              <td>{{ data.gender }}</td>
+                            </tr>
+                            <tr>
+                              <th>Phone</th>
+                              <td>{{ data.phone }}</td>
+                            </tr>
+                            <tr>
+                              <th>Created At</th>
+                              <td>
+                                {{ data.createdAt }}
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>Email</th>
+                              <td>
+                                {{ data.email }}
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>Subscription</th>
+                              <td>
+                                {{ data.subscription }}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card card-profile">
+                    <div class="row text-center justify-content-center">
+                      <div class="card-avatar mt-1" *ngIf="data.photoURL">
+                        <a href="javascript:void(0)">
+                          <img class="img" src="{{ data.photoURL }}" />
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <!-- <h6 class="card-category text-gray">CEO / Co-Founder</h6> -->
+                      <h4 class="card-title">
+                        {{ data.displayName }}
+                      </h4>
+                      <p class="card-description">Description about operator</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ng-template #mymodal let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">
+                  Edit Operator Information
+                </h4>
+                <button type="button" class="close" aria-label="Close">
+                  <!-- (click)="modal.dismiss('Cross click')" -->
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="add-user-form-modal"></div>
+              </div>
+            </ng-template>
+
+            <ng-template #coinmodal let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Add Coin</h4>
+                <button type="button" class="close" aria-label="Close">
+                  <!-- (click)="modal.dismiss('Cross click')" -->
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="add-user-form-modal"></div>
+              </div>
+            </ng-template>
+
+            <ng-template #myProfile let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Image show</h4>
+                <button type="button" class="close" aria-label="Close">
+                  <!-- (click)="modal.dismiss('Cross click')" -->
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <span class="m-2">
+                  <img
+                    class="text-center"
+                    src="{{ data.profilePicture }}"
+                    width="700"
+                    height="700"
+                  />
+                </span>
+              </div>
+            </ng-template>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <!-- <ng-template #dialog let-data let-ref="dialogRef">
+                <nb-card>
+                  <nb-card-header
+                    >ADD NEW ROLE
+                    <button nbButton class="float-right" (click)="ref.close()">Close</button>
+                  </nb-card-header>
+                  <nb-card-body>
+                    <form [formGroup]="form" (ngSubmit)="onSubmit(model)">
+                      <formly-form
+                        [form]="form"
+                        [fields]="fields"
+                        [model]="model"
+                      ></formly-form>
+                      <div class="justify-content-center text-center">
+                        <button
+                          type="submit"
+                          class="btn btn-primary submit-button login-button"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                    </form>
+                  </nb-card-body>
+                  <nb-card-footer> </nb-card-footer>
+                </nb-card>
+              </ng-template> -->
+
+      <!-- <ng-template #user_dialog let-data let-ref="dialogRef">
+                <nb-card>
+                  <nb-card-header
+                    >Edit User information
+                    <button nbButton class="float-right" (click)="ref.close()">Close</button>
+                  </nb-card-header>
+                  <nb-card-body>
+                    <form [formGroup]="form" (ngSubmit)="onSubmitUser(model)">
+                      <formly-form
+                        [form]="user_form"
+                        [fields]="user_fields"
+                        [model]="user_model"
+                      ></formly-form>
+                      <div class="justify-content-center text-center">
+                        <button
+                          type="submit"
+                          class="btn btn-primary submit-button login-button"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                    </form>
+                  </nb-card-body>
+                  <nb-card-footer> </nb-card-footer>
+                </nb-card>
+              </ng-template> -->
+    </nb-card-body>
+  </nb-card>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add new shop</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <nb-card>
+      <nb-card-header>
+        <!-- <button nbButton class="float-right" (click)="ref.close()">
+            Close
+          </button> -->
+      </nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="form" (ngSubmit)="onSubmit(model)">
+          <formly-form
+            [form]="form"
+            [fields]="fields"
+            [model]="model"
+          ></formly-form>
+          <div class="justify-content-center text-center">
+            <button
+              type="submit"
+              class="btn btn-primary submit-button login-button"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </nb-card-body>
+      <nb-card-footer> </nb-card-footer>
+    </nb-card>
+  </div>
+  <div class="modal-footer">
+    <!-- <button
+        type="button"
+        class="btn btn-outline-dark"
+        (click)="modal.close('Save click')"
+      >
+        Save
+      </button> -->
+  </div>
+</ng-template>

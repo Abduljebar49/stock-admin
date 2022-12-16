@@ -1,0 +1,52 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo" href="#" (click)="navigateHome()" *ngIf="shopName">
+      {{shopName}}
+    </a>
+  </div>
+  <!-- <nb-select
+    [selected]="currentTheme"
+    (selectedChange)="changeTheme($event)"
+    status="primary"
+  >
+    <nb-option *ngFor="let theme of themes" [value]="theme.value">
+      {{ theme.name }}</nb-option
+    >
+  </nb-select> -->
+</div>
+<div class="justify-content-center" *ngIf="subscriptionStatus=='Free Trial'">
+  <p class="bg-danger p-3 text-white">Free Trial {{daysLeft}} days left</p>
+</div>
+<div class="header-container">
+  <nb-select
+    [selected]="selectedBranch"
+    (selectedChange)="changeBranch($event)"
+    status="primary"
+  >
+  <p class="text-white">Current Branch</p>
+  Current Branch
+    <nb-option *ngFor="let theme of branches" [value]="theme.name">
+      {{ theme.name }}</nb-option
+    >
+  </nb-select>
+
+  <nb-actions size="small">
+    <!-- <nb-action class="control-item">
+      <nb-search type="rotate-layout"></nb-search>
+    </nb-action> -->
+    <!-- <nb-action class="control-item" icon="email-outline"></nb-action>
+    <nb-action class="control-item" icon="bell-outline"></nb-action> -->
+    <nb-action class="user-action" *nbIsGranted="['view', 'user']">
+      <nb-user
+        [nbContextMenu]="userMenu"
+        [onlyPicture]="userPictureOnly"
+        [name]="user?.displayName"
+        [picture]="user?.photoURL"
+      >
+      </nb-user>
+    </nb-action>
+  </nb-actions>
+</div>

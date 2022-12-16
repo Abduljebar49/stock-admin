@@ -1,0 +1,12 @@
+[
+    {
+        "type":"Clothes and Shoes",
+        "id":1,
+        "data":{
+            "name":"Name",
+            "model":"Model",
+            "size":"Size",
+            "quantity":"Quantity"
+        }        
+    }
+]
